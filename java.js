@@ -89,6 +89,10 @@ withdraw(amount) {
 deposit(amount) {
   this.balance += amount
 }
+transfer(amount, acct) {
+  this.balance -= amount
+  acct.balance = acct.balance + amount
+}
 }
 let account = new BankAccount("Wesley","James","Kolar","Checking",1000000,"Opened")
 console.log(account)
@@ -98,3 +102,15 @@ console.log(account)
 
 account.deposit(300)
 console.log(account)
+
+let account2 = new BankAccount("Betsy","Dianne","McGee","Checking",500000,"Opened")
+console.log(account2)
+console.log(account)
+
+account.transfer(10000,account2)
+console.log(account2)
+console.log(account)
+
+// Overdraft fees are evil, I will not be including them in my pretend bank 
+// but if i did i would use and if this.balance < 0 this.balance -= 35 but actually
+                                                
