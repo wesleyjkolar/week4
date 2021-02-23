@@ -94,6 +94,7 @@ transfer(amount, acct) {
   acct.balance = acct.balance + amount
 }
 }
+
 let account = new BankAccount("Wesley","James","Kolar","Checking",1000000,"Opened")
 console.log(account)
 
@@ -111,6 +112,9 @@ account.transfer(10000,account2)
 console.log(account2)
 console.log(account)
 
-// Overdraft fees are evil, I will not be including them in my pretend bank 
-// but if i did i would use and if this.balance < 0 this.balance -= 35 but actually
+account2.transfer(300,account)
+console.log(account2)
+console.log(account)
+
+// Overdraft fees are evil
                                                 
