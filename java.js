@@ -73,11 +73,28 @@ console.log(numbers)
 
 // bank account
 
-function bankAccount(fullname, acctype, balance, status) {
-  this.fullname = fullname
-  this.acctype = acctype
-  this.balance = balance
-  this.status = status
+
+class BankAccount {
+  constructor(firstname, middlename, lastname, acctype, balance, status) { //this is similar to Python's __init__
+    this.firstname = firstname
+    this.middlename = middlename
+    this.lastname = lastname
+    this.acctype = acctype
+    this.balance = balance
+    this.status = status
 }
-console.log(bankAccount("Wesley Kolar","Checking Account:$","100,000,000.98","Opened"))
-console.log(fullname, acctype, balance, status)
+withdraw(amount) {
+  this.balance -= amount
+}
+deposit(amount) {
+  this.balance += amount
+}
+}
+let account = new BankAccount("Wesley","James","Kolar","Checking",1000000,"Opened")
+console.log(account)
+
+account.withdraw(198)
+console.log(account)
+
+account.deposit(300)
+console.log(account)
